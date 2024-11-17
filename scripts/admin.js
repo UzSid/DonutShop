@@ -1,4 +1,4 @@
-fetch("http://localhost/projects/project3/index.php")
+fetch("http://localhost/projects/project3/scripts/index.php")
     .then(response => response.json())
     .then(json => {
         sessionStorage.setItem("donutList", JSON.stringify(json));				
@@ -6,38 +6,35 @@ fetch("http://localhost/projects/project3/index.php")
 
 let arr = JSON.parse(sessionStorage.getItem("donutList"));
 const donutList = (
-    <form action="create.php" method="GET">
+    <ul>
     { 
         arr.map(({ID, Name, Price, Description}) => {      
             return (
                 <div key={ID}>
-                    <p>{ID} | {Name} | {Price} | {Description}</p>
-                </div>
-                
+                    <p>{ID} | {Name} | {Description} | {Price}</p>
+                </div>   
             )
         })
     }
-    </form>
+    </ul>
 );
 
 const createDonut = (    
-    <form action="create.php" method="GET"> 
-        <p>Create a new donut:</p>
+    <form action="scripts/create.php" method="GET"> 
         Name: <input type="text" name="Name"></input><br></br>
         Description: <input type="text" name="Description"></input><br></br>
         Price: <input type="text" name="Price"></input><br></br>
-        <input type="submit"></input>
+        <input type="submit" value = "Create"></input>
     </form>
 );
 
 const updateDonut = (
-    <form action="update.php" method="GET">
-    <p>Update an existing donut</p>
+    <form action="scripts/update.php" method="GET">
     { 
         arr.map(({ID, Name, Price, Description}) => {      
             return (
                 <div key={ID}>
-                    <input type="radio" name="ID" value={ID}></input>{ID} | {Name} | {Price} | {Description}
+                    <input type="radio" name="ID" value={ID}></input>{ID} | {Name} | {Description} | {Price}
                 </div>                
             )
         })
@@ -45,32 +42,24 @@ const updateDonut = (
     New name: <input type="text" name="Name"></input><br></br>
     New description: <input type="text" name="Description"></input><br></br>
     New price: <input type="text" name="Price"></input><br></br>
-    <input type="submit"></input>
+    <input type="submit" value = "Update"></input>
     </form>
 );
 
 const deleteDonut = (
-    <form action="delete.php" method="GET">
-    <p>Delete an existing donut</p>
+    <form action="scripts/delete.php" method="GET">
     { 
         arr.map(({ID, Name, Price, Description}) => {      
             return (
                 <div key={ID}>
-                    <input type="radio" name="ID" value={ID}></input>{ID} | {Name} | {Price} | {Description}
+                    <input type="radio" name="ID" value={ID}></input>{ID} | {Name} | {Description} | {Price}
                 </div>                
             )
         })
     }
-    <input type="submit"></input>
+    <input type="submit" value = "Delete"></input>
     </form>    
 );
-
-/*
-<div key={ID}>
-    <input type="radio" id={ID} name="fav_language" value={ID}></input>
-    <label for="html">{ID} | {Name} | {Price} | {Description}</label><br></br>
-    <input type="submit"></input>
- */
 
 const container1 = document.getElementById('root1');
 const root1 = ReactDOM.createRoot(container1);

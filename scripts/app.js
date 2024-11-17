@@ -1,4 +1,4 @@
-fetch("http://localhost/projects/project3/index.php")
+fetch("http://localhost/projects/project3/scripts/index.php")
     .then(response => response.json())
     .then(json => {
         sessionStorage.setItem("donutList", JSON.stringify(json));				
@@ -12,8 +12,8 @@ const donut = (
             return (
                 <div key={ID}>
                     <p>{Name}</p>
-                    <p>{Price}</p>
                     <p>{Description}</p>
+                    <p>{Price}</p>
                 </div>
             )
         })
