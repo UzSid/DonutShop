@@ -7,11 +7,16 @@ fetch("http://localhost/projects/project3/scripts/index.php")
 let arr = JSON.parse(sessionStorage.getItem("donutList"));
 const donutList = (
     <ul>
+    <h1 class="labels"><b>Current donuts</b></h1><br></br>
+    <hr></hr>
     { 
         arr.map(({ID, Name, Price, Description}) => {      
             return (
                 <div key={ID}>
-                    <p>{ID} | {Name} | {Description} | {Price}</p>
+                    <p><b>Name:</b> {Name}</p>
+                    <p><b>Description:</b> {Description}</p>
+                    <p><b>Price:</b> {Price}</p>
+                    <hr></hr>
                 </div>   
             )
         })
@@ -20,44 +25,51 @@ const donutList = (
 );
 
 const createDonut = (    
-    <form action="scripts/create.php" method="GET"> 
-        Name: <input type="text" name="Name"></input><br></br>
-        Description: <input type="text" name="Description"></input><br></br>
-        Price: <input type="text" name="Price"></input><br></br>
-        <input type="submit" value = "Create"></input>
+    <form action="scripts/create.php" method="GET">
+        <h2 class="labels"><b>Create a new donut</b></h2><br></br>
+        <b>Name:</b> <input type="text" name="Name"></input><br></br>
+        <b>Description:</b> <input type="text" name="Description"></input><br></br>
+        <b>Price:</b> <input type="text" name="Price"></input><br></br>
+        <br></br>
+        <input type="submit" value = "Create" class="editbutton"></input>
     </form>
 );
 
 const updateDonut = (
     <form action="scripts/update.php" method="GET">
+    <h2 class="labels"><b>Update an existing donut</b></h2>
     { 
         arr.map(({ID, Name, Price, Description}) => {      
             return (
                 <div key={ID}>
-                    <input type="radio" name="ID" value={ID}></input>{ID} | {Name} | {Description} | {Price}
+                    <br></br><input type="radio" name="ID" value={ID} class="radio"></input>{Name} | {Description} | {Price}
                 </div>                
             )
         })
     }
-    New name: <input type="text" name="Name"></input><br></br>
-    New description: <input type="text" name="Description"></input><br></br>
-    New price: <input type="text" name="Price"></input><br></br>
-    <input type="submit" value = "Update"></input>
+    <br></br>
+    <b>New name:</b> <input type="text" name="Name"></input><br></br>
+    <b>New description:</b> <input type="text" name="Description"></input><br></br>
+    <b>New price:</b> <input type="text" name="Price"></input><br></br>
+    <br></br>
+    <input type="submit" value = "Update" class="editbutton"></input>
     </form>
 );
 
 const deleteDonut = (
     <form action="scripts/delete.php" method="GET">
+    <h2 class="labels"><b>Delete an existing donut</b></h2>
     { 
         arr.map(({ID, Name, Price, Description}) => {      
             return (
                 <div key={ID}>
-                    <input type="radio" name="ID" value={ID}></input>{ID} | {Name} | {Description} | {Price}
+                    <br></br><input type="radio" name="ID" value={ID} class="radio"></input>{Name} | {Description} | {Price}
                 </div>                
             )
         })
     }
-    <input type="submit" value = "Delete"></input>
+    <br></br>
+    <input type="submit" value = "Delete" class="editbutton"></input>
     </form>    
 );
 

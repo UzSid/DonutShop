@@ -3,27 +3,25 @@
   <head>
     <link rel="stylesheet" href="styles/admin.css">
     <meta charset="UTF-8"/>
-    <title>Donut Shop</title>
+    <title>Donut Shop Admin Page</title>
   </head>
-  <body>
+  <body class="grid-container">
 
     <script src="https://unpkg.com/react@18/umd/react.development.js" crossorigin></script>
     <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js" crossorigin></script>
     <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
 
-    <p><b>Current donuts:</b></p>
-    <div id="root1"></div>
+    <h1 class="item5"><b>Admin Page</b></h1>
+
+    <button class="item6" onClick="window.location.reload();">Refresh page to show changes</button>
+
+    <div id="root1" class="item2"></div>
     
-    <p><b>Refresh page to show changes</b></p>
+    <div id="root2" class="item3"></div>
+
+    <div id="root3" class="item1"></div>
     
-    <p><b>Create a new donut:</b></p>
-    <div id="root2"></div>
-    
-    <p><b>Update an existing donut</b></p>
-    <div id="root3"></div>
-    
-    <p><b>Delete an existing donut</b></p>
-    <div id="root4"></div>
+    <div id="root4" class="item4"></div>
     
     <script type="text/babel" src="scripts/admin.js"></script>    
 

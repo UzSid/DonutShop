@@ -1,21 +1,87 @@
-.item1 { grid-area: topright; }
-.item2 { grid-area: topleft; }
-.item3 { grid-area: bottomright; }
-.item4 { grid-area: bottomleft; }
+body {
+  font-family: Tahoma, Verdana, sans-serif;
+  color: tomato;
+}
+
+.item1 { grid-area: middleright; }
+.item2 { grid-area: left; }
+.item3 { grid-area: topright; }
+.item4 { grid-area: bottomright; }
+.item5 {
+  grid-area: header;
+  font-size: 70px;
+  padding-top: 50px;
+  padding-bottom: 50px;
+  padding-left: 30px;
+  margin-bottom: 0px;
+  margin-top: 0px;
+  margin-right: 30px;
+  text-shadow: 1px 1px 70px gold;
+}
+.item6 {
+  grid-area: tip;
+  padding: 10px 24px;
+  background-color: gold;
+  border: none;
+  font-family: inherit;
+  font-size: 15px;
+  color: rebeccapurple;
+}
 
 .grid-container {
   display: grid;
   grid-template-areas:
-    'topleft topright'
-    'bottomleft bottomright';
+    'header header'
+    'left tip'
+    'left topright'
+    'left middleright'
+    'left bottomright';
   gap: 10px;
-  background-color: #2196F3;
-  padding: 10px;
+  background-color: darkmagenta;
+
 }
 
 .grid-container > div {
-  background-color: rgba(255, 255, 255, 0.8);
-  text-align: center;
-  padding: 20px 0;
-  font-size: 30px;
+  background-color: rebeccapurple;
+  padding-bottom: 30px;
+  padding-left: 20px;
+  font-size: 20px;
+}
+
+.labels {
+  color: gold;
+  margin-bottom: 0px;
+}
+
+.editbutton {
+  padding: 5px 24px;
+  background-color: gold;
+  border: none;
+  font-family: inherit;
+  font-size: 15px;
+  color: rebeccapurple;
+}
+
+.editbutton:hover {
+  background-color: tomato;
+}
+
+button:hover {
+  background-color: tomato;
+}
+
+input[type=text] {
+  margin: 8px 0;
+  box-sizing: border-box;
+  border: none;
+  font-family: inherit;
+  font-size: 15px;
+  color: rebeccapurple;
+}
+
+.radio {
+
+  height: 17px;
+  width: 17px;
+  accent-color: rebeccapurple;
 }
