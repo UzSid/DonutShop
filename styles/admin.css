@@ -4,9 +4,13 @@ body {
 }
 
 .item1 { grid-area: middleright; }
+
 .item2 { grid-area: left; }
+
 .item3 { grid-area: topright; }
+
 .item4 { grid-area: bottomright; }
+
 .item5 {
   grid-area: header;
   font-size: 70px;
@@ -18,26 +22,30 @@ body {
   margin-right: 30px;
   text-shadow: 1px 1px 70px gold;
 }
+
 .item6 {
-  grid-area: tip;
-  padding: 10px 24px;
+  grid-area: refresh;
+  padding: 20px 24px;
   background-color: gold;
   border: none;
   font-family: inherit;
   font-size: 15px;
   color: rebeccapurple;
+  font-weight: bold;
+  box-shadow: 0px 0px 10px 3px rebeccapurple;
 }
 
 .grid-container {
   display: grid;
   grid-template-areas:
     'header header'
-    'left tip'
+    'left refresh'
     'left topright'
     'left middleright'
     'left bottomright';
-  gap: 10px;
+  gap: 30px;
   background-color: darkmagenta;
+  margin:30px
 
 }
 
@@ -46,6 +54,7 @@ body {
   padding-bottom: 30px;
   padding-left: 20px;
   font-size: 20px;
+  box-shadow: 0px 0px 10px 3px rebeccapurple;
 }
 
 .labels {
@@ -60,14 +69,18 @@ body {
   font-family: inherit;
   font-size: 15px;
   color: rebeccapurple;
+  font-weight: bold ;
+  box-shadow: 0px 0px 5px 1px gold;
 }
 
 .editbutton:hover {
   background-color: tomato;
+  box-shadow: 0px 0px 5px 1px tomato;
 }
 
 button:hover {
   background-color: tomato;
+  box-shadow: 0px 0px 5px 1px tomato;
 }
 
 input[type=text] {
@@ -80,8 +93,12 @@ input[type=text] {
 }
 
 .radio {
-
   height: 17px;
   width: 17px;
   accent-color: rebeccapurple;
+}
+
+hr {
+  border: 2px solid gold;
+  margin-right: 60px;
 }

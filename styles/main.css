@@ -16,6 +16,7 @@ body {
   margin-right: 30px;
   text-shadow: 1px 1px 70px gold;
 }
+
 .item3 {
   grid-area: left;
   padding-top: 1px;
@@ -25,10 +26,14 @@ body {
   background-color: rebeccapurple;
   box-shadow: 0px 0px 10px 3px rebeccapurple;
 }
+
 .item4 {
   grid-area: right;
   padding-bottom: 10px;
+  margin-left: auto;
+  margin-right: auto;
 }
+
 .item5 {
   grid-area: footer;
   text-align: center;
@@ -79,7 +84,7 @@ img {
   float:right;
   margin-top: 30px;
   margin-bottom: 30px;
-  box-shadow: 0px 0px 10px 2px rebeccapurple;
+  box-shadow: 0px 0px 15px 5px rebeccapurple;
 }
 
 .menuhead {
@@ -87,5 +92,5 @@ img {
   padding-bottom: 10px;
   color: rebeccapurple;
   background-color: gold;
-  box-shadow: 0px 0px 10px 6px gold;
+  box-shadow: 0px 0px 10px 6px rebeccapurple;
 }
